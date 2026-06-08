@@ -218,7 +218,7 @@ Instructions for fields:
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Fallback all other client requests to index.html (SPA Router support)
-app.get('*', (req, res) => {
+app.get('/:splat*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
